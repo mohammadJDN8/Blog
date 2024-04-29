@@ -9,6 +9,7 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function CardEl({ title, coverPhoto, author, slug }) {
   
@@ -33,7 +34,9 @@ function CardEl({ title, coverPhoto, author, slug }) {
         <CardContent><Typography component="h3" variant="h6" fontWeight={600} color="text.primary">{title}</Typography></CardContent>
         <Divider variant="middle" />
         <CardActions>
+          <Link to={`/blogs/${slug}`} style={{textDecoration:"none",width:"100%"}}>
           <Button variant="outlined" sx={{ width: "100%", borderRadius: 3 }}>مطالعه مقاله</Button>
+          </Link>
         </CardActions>
       </Card>
     </>
