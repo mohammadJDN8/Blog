@@ -13,13 +13,22 @@ function AuthorPage() {
   if (errors) return <h4>Error</h4>;
   return (
     <Container maxWidth="lg">
-      <Grid container>
-        <Grid item>
-          <Avatar src={data.author.avatar.url} />
-          <Typography component="h3" variant="h5">
+      <Grid container mt={10}>
+        <Grid
+          item
+          xs={12}
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+        >
+          <Avatar
+            src={data.author.avatar.url}
+            sx={{ width: 250, height: 250 }}
+          />
+          <Typography component="h3" variant="h5" mt={4} fontWeight={700}>
             {data.author.name}
           </Typography>
-          <Typography component="p" variant="h5">
+          <Typography component="p" variant="h5" mt={2} color="text.secondary ">
             {data.author.field}
           </Typography>
         </Grid>
