@@ -45,19 +45,19 @@ const GET_AUTHOR_INFO = gql`
         url
       }
       field
-      slug
+      name
       description {
         html
       }
-      name
-    }
-    posts {
-      coverPhoto {
-        url
+
+      posts {
+        coverPhoto {
+          url
+        }
+        id
+        slug
+        title
       }
-      slug
-      title
-      id
     }
   }
 `;

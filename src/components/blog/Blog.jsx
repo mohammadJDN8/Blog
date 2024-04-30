@@ -3,11 +3,12 @@ import React from "react";
 import { GET_BLOGS_INFO } from "../../graphql/queries";
 import { Grid } from "@mui/material";
 import CardEl from "../shared/CardEl";
+import Loader from "../shared/Loader";
 
 function Blog() {
   const { loading, data, errors } = useQuery(GET_BLOGS_INFO);
 
-  if (loading) return <h4>Loading ...</h4>;
+  if (loading) return <Loader />;
   if (errors) return <h4>Error</h4>;
   
   return (
