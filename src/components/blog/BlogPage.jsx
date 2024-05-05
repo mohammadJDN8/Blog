@@ -5,6 +5,7 @@ import { GET_BLOG_INFO } from "../../graphql/queries";
 import Loader from "../shared/Loader";
 import { Avatar, Box, Container, Grid, Typography } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import CommentForm from "../comment/CommentForm";
 
 function BlogPage() {
   const navigate = useNavigate();
@@ -73,6 +74,9 @@ function BlogPage() {
             <div
               dangerouslySetInnerHTML={{ __html: data.post.content.html }}
             ></div>
+          </Grid>
+          <Grid item sx={12}>
+            <CommentForm slug={slug} />
           </Grid>
         </Grid>
       </Container>
