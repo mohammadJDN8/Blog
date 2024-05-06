@@ -33,12 +33,12 @@ function CommentForm({ slug }) {
         mt: 5,
       }}
     >
-      <Grid item sx={12} m={2}>
+      <Grid item xs={12} m={2}>
         <Typography component="p" variant="h6" color="primary" fontWeight={700}>
           ارسال کامنت
         </Typography>
       </Grid>
-      <Grid item sx={12} m={2} width="100%">
+      <Grid item xs={12} m={2} width="100%">
         <TextField
           label="نام کاربری"
           variant="outlined"
@@ -47,7 +47,7 @@ function CommentForm({ slug }) {
           onChange={(e) => setName(e.target.value)}
         />
       </Grid>
-      <Grid item sx={12} m={2} width="100%">
+      <Grid item xs={12} m={2} width="100%">
         <TextField
           label="ایمیل"
           variant="outlined"
@@ -56,7 +56,7 @@ function CommentForm({ slug }) {
           onChange={(e) => setEmail(e.target.value)}
         />
       </Grid>
-      <Grid item sx={12} m={2} width="100%">
+      <Grid item xs={12} m={2} width="100%">
         <TextField
           label="متن کامنت"
           variant="outlined"
@@ -67,7 +67,7 @@ function CommentForm({ slug }) {
           minRows={4}
         />
       </Grid>
-      <Grid item sx={12} m={2}>
+      <Grid item xs={12} m={2}>
         {loading ? (
           <Button variant="contaiend" disabled>
             در حال ارسال ...
