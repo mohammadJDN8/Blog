@@ -9,6 +9,7 @@ function Comments({ slug }) {
   });
   console.log(data, loading);
   if (loading) return null;
+  if (data.comments.length == 0) return null;
   return (
     <Grid container>
       <Grid
@@ -32,15 +33,22 @@ function Comments({ slug }) {
           </Typography>
           {data.comments.map((comment) => (
             <>
-              <Grid item sx={12} mt={2} border="solid 1px #ddd1d1" borderRadius={2} p={2}>
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  mb={3}
-                  
-                >
+              <Grid
+                item
+                sx={12}
+                mt={2}
+                border="solid 1px #ddd1d1"
+                borderRadius={2}
+                p={2}
+              >
+                <Box display="flex" alignItems="center" mb={3}>
                   <Avatar>{comment.name[0]}</Avatar>
-                  <Typography component="span" variant="h6" fontWeight={700} mr={1}>
+                  <Typography
+                    component="span"
+                    variant="h6"
+                    fontWeight={700}
+                    mr={1}
+                  >
                     {comment.name}
                   </Typography>
                 </Box>
