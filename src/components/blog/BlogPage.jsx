@@ -6,6 +6,7 @@ import Loader from "../shared/Loader";
 import { Avatar, Box, Container, Grid, Typography } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import CommentForm from "../comment/CommentForm";
+import Comments from "../comment/Comments";
 
 function BlogPage() {
   const navigate = useNavigate();
@@ -49,26 +50,19 @@ function BlogPage() {
               width="100%"
             />
           </Grid>
-          <Grid
-            item
-            sx={12}
-           mt={7}
-            display="flex"
-            alignItems="center"
-          >
+          <Grid item sx={12} mt={7} display="flex" alignItems="center">
             <Avatar
               src={data.post.author.avatar.url}
               sx={{ width: 80, height: 80, marginLeft: 2 }}
             />
             <Box component="div">
-            <Typography component="p" variant="h5" fontWeight={700}>
-              {data.post.author.name}
-            </Typography>
-            <Typography component="p" variant="p" color="text.secondary">
-              {data.post.author.field}
-            </Typography>
+              <Typography component="p" variant="h5" fontWeight={700}>
+                {data.post.author.name}
+              </Typography>
+              <Typography component="p" variant="p" color="text.secondary">
+                {data.post.author.field}
+              </Typography>
             </Box>
-            
           </Grid>
           <Grid item sx={12}>
             <div
@@ -77,6 +71,9 @@ function BlogPage() {
           </Grid>
           <Grid item sx={12}>
             <CommentForm slug={slug} />
+          </Grid>
+          <Grid item sx={12} mt={7}>
+            <Comments slug={slug} />
           </Grid>
         </Grid>
       </Container>

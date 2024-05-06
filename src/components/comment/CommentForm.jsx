@@ -16,7 +16,7 @@ function CommentForm({ slug }) {
   const sendHandler = () => {
     if (name && email && text) {
       sendComment();
-      toast.success("کامنت با موفقیت ثبت شد و منتظر تایید  ناظر میباشد", {
+      toast.success("کامنت با موفقیت ثبت شد و منتظر تایید میباشد", {
         position: "top-center",
       });
     } else {
@@ -68,9 +68,15 @@ function CommentForm({ slug }) {
         />
       </Grid>
       <Grid item sx={12} m={2}>
-        {loading ? <Button variant="contaiend" disabled >در حال ارسال ...</Button> : <Button onClick={sendHandler} variant="contained">
-          ارسال
-        </Button>}
+        {loading ? (
+          <Button variant="contaiend" disabled>
+            در حال ارسال ...
+          </Button>
+        ) : (
+          <Button onClick={sendHandler} variant="contained">
+            ارسال
+          </Button>
+        )}
       </Grid>
       <ToastContainer />
     </Grid>
